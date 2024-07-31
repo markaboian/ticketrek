@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ms-users
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://54.211.227.50:8080/realms/ticketrek
+
+eureka:
+  instance:
+    hostname: 3.87.66.156
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://18.234.78.224:8761/eureka
+
+server:
+  port: 8082
